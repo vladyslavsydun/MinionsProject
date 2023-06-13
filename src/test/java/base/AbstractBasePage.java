@@ -19,11 +19,10 @@ public class AbstractBasePage extends AbstractBase {
 
     public AbstractBasePage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofMillis(500));
-        this.actions = new Actions(driver);
+        this.wait = new WebDriverWait(driver, Duration.ofMillis(15000));
     }
 
-    protected WebElement waitUntilVisibilityOfElement(String locator) {
+    public WebElement waitUntilVisibilityOfElement(String locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
     }
 
