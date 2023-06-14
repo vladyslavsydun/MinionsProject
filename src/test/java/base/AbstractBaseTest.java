@@ -13,15 +13,14 @@ import java.time.Duration;
 abstract public class AbstractBaseTest {
     protected static WebDriver driver;
 
-    public static String WEBDRIVER = "https://www.vans.com/en-us";
+    public static final String BASE_URL = "https://www.vans.com/en-us";
 
     @BeforeMethod
     public void openBrowser() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get(WEBDRIVER);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
     }
 
     @AfterMethod
