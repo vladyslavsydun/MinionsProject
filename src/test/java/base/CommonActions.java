@@ -24,4 +24,8 @@ public class CommonActions {
     public static void scrollToElement(WebElement element, WebDriver driver) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
+    public static void scrollToBottonOfThePage(WebDriver driver) {
+        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
 }
+
