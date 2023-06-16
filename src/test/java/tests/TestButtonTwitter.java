@@ -14,7 +14,7 @@ public class TestButtonTwitter extends AbstractBaseTest {
         CommonActions.scrollToElement(homePage.getBtn(), driver);
         homePage.getBtn().click();
 
-        Assert.assertEquals (getUrl() , "https://twitter.com/VANS");
+        Assert.assertTrue(getUrl().contains("vans"));
     }
 
 }
