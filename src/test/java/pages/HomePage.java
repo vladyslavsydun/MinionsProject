@@ -67,6 +67,21 @@ public class HomePage extends AbstractBasePage {
         homePage.getFieldInputMessage().sendKeys(message + Keys.ENTER);
         return this;
     }
+
+
+
+
+
+    // TestButtonTwitter
+
+    private static final String BTN_TWIT = "//a[@class=\"icon icon-twitter\"]";
+    public WebElement getBtn() {
+        return driver.findElement(By.xpath(BTN_TWIT));
+    }
+
+
+
+
 }
 
 
