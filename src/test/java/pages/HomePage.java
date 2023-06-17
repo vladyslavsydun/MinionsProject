@@ -80,7 +80,26 @@ public class HomePage extends AbstractBasePage {
         homePage.getFieldInputMessage().sendKeys(message + Keys.ENTER);
         return this;
     }
+
+
+    // TestMenuBar
+    private  static  final  String ACCESSORIES = "//a[@title=\"Accessories\"]";
+    public  WebElement getMenu() {
+        return  driver.findElement(By.xpath(ACCESSORIES)) ;
+    }
+
+    private static final String ITEM_ALL_ACCESSORIES= "//a[@class=\"vf-link\"]";
+    public WebElement getMenuItem() {
+        return  driver.findElement(By.xpath(ITEM_ALL_ACCESSORIES)) ;
+    }
+
+
 }
+
+
+
+
+
 
 
 
