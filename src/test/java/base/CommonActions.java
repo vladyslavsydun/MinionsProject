@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import static base.AbstractBaseTest.driver;
+
 
 public class CommonActions {
     public static void moveCursor(WebElement element, WebDriver driver) {
@@ -23,5 +25,10 @@ public class CommonActions {
 
     public static void scrollToElement(WebElement element, WebDriver driver) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public static void scroll(int pixels) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0," + pixels + ")", "");
     }
 }
