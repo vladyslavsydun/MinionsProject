@@ -1,12 +1,10 @@
 package pages;
 
 import base.AbstractBasePage;
-import base.CommonActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import tests.InitialTest;
 
 import static base.CommonActions.moveCursor;
 
@@ -23,21 +21,43 @@ public class HomePage extends AbstractBasePage {
     private static final String LIVE_CHAT_SEND_BUTTON = "//button[@id='tcChat_btnSend_img']";
     private static final String LIVE_CHAT_ANSWER_MESSAGE_ONE = "//span[contains(text (), 'We are sorry for the inconvenience!  Would you like to chat with a live agent?')]";
     private static final String LIVE_CHAT_ANSWER_MESSAGE_TWO = "//span[contains(text (), 'Was this helpful?')]";
+    private static final String BTN_SHOES = "//a[@data-navigation='00081']";
+    private static final String SHOES_BTN_WOMEN_SLIPON = "//a[contains(@href, '/en-us/categories/classic-slip-ons-c5315?f=Gender,W')]";
+    private static final String BTN_FAVORITES = "//div[contains(text (), 'Favorites')]";
+    private static final String BTN_FAVORITES_AFTER_ADDING_GOODS = "//div[contains(text (), 'Favorites')]/span[contains(text (), '(1)')]";
 
+    public WebElement getBtnFavoritesAfterAdding() {
+        return driver.findElement(By.xpath(BTN_FAVORITES_AFTER_ADDING_GOODS));
+    }
+    public WebElement getBtnFavorites() {
+        return driver.findElement(By.xpath(BTN_FAVORITES));
+    }
+
+    public WebElement getShoesWomanSlipOn() {
+        return waitUntilElementToBeClickable(SHOES_BTN_WOMEN_SLIPON);
+    }
 
     public WebElement getLiveChat() {
         return waitUntilVisibilityOfElement(LIVE_CHAT);
     }
+
+    public WebElement getBtnShoes() {
+        return driver.findElement(By.xpath(BTN_SHOES));
+    }
+
     public WebElement getLiveChatAnswerOne() {
         return driver.findElement(By.xpath(LIVE_CHAT_ANSWER_MESSAGE_ONE));
-    }public WebElement getLiveChatAnswerTwo() {
+    }
+
+    public WebElement getLiveChatAnswerTwo() {
         return driver.findElement(By.xpath(LIVE_CHAT_ANSWER_MESSAGE_TWO));
     }
+
     public WebElement getLiveChatSendButton() {
         return driver.findElement(By.xpath(LIVE_CHAT_SEND_BUTTON));
     }
 
-    public void clickliveChatSendButton(){
+    public void clickliveChatSendButton() {
         getLiveChatSendButton().click();
     }
 
@@ -61,10 +81,14 @@ public class HomePage extends AbstractBasePage {
     }
 
     public HomePage liveChatInsertMessage(String message) {
-        HomePage homePage = new HomePage(driver);
-        homePage.
-                clickBtnLiveChat();
-        homePage.getFieldInputMessage().sendKeys(message + Keys.ENTER);
+        clickBtnLiveChat()
+                .getFieldInputMessage().sendKeys(message + Keys.ENTER);
+        return this;
+    }
+
+    public HomePage goShoesWomanSlipOn() {
+        moveCursor(getBtnShoes(), driver);
+        getShoesWomanSlipOn().click();
         return this;
     }
 }
