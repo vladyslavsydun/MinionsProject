@@ -28,16 +28,20 @@ public class HomePage extends AbstractBasePage {
     public WebElement getLiveChat() {
         return waitUntilVisibilityOfElement(LIVE_CHAT);
     }
+
     public WebElement getLiveChatAnswerOne() {
         return driver.findElement(By.xpath(LIVE_CHAT_ANSWER_MESSAGE_ONE));
-    }public WebElement getLiveChatAnswerTwo() {
+    }
+
+    public WebElement getLiveChatAnswerTwo() {
         return driver.findElement(By.xpath(LIVE_CHAT_ANSWER_MESSAGE_TWO));
     }
+
     public WebElement getLiveChatSendButton() {
         return driver.findElement(By.xpath(LIVE_CHAT_SEND_BUTTON));
     }
 
-    public void clickliveChatSendButton(){
+    public void clickliveChatSendButton() {
         getLiveChatSendButton().click();
     }
 
