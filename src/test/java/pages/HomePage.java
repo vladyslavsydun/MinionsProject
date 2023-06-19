@@ -1,12 +1,10 @@
 package pages;
 
 import base.AbstractBasePage;
-import base.CommonActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import tests.InitialTest;
 
 import static base.CommonActions.moveCursor;
 
@@ -66,6 +64,38 @@ public class HomePage extends AbstractBasePage {
                 clickBtnLiveChat();
         homePage.getFieldInputMessage().sendKeys(message + Keys.ENTER);
         return this;
+    }
+
+
+
+
+    //    |- - - - - - - - - - - - - - - - - AutoTestVideoYt - - - - - - - - - - - - - - - - -|
+
+    private static final String ITEM_BMX = "//a[@title=\"BMX\"]" ;
+
+//    public WebElement getBmx() {
+//        return driver.findElement(By.xpath(ITEM_BMX));
+//    }
+    public WebElement getBmx() {
+        return waitUntilVisibilityOfElement(ITEM_BMX);
+    }
+
+    private static final String ITEM_VIDEO = "//a[@class=\"menu__link video__link scrollnow\"]";
+
+    public WebElement getVideo() {
+        return waitUntilVisibilityOfElement(ITEM_VIDEO);
+    }
+
+    private static final String RIGHT_BUTTON = "//button[@aria-label=\"Go to next slide\"]";
+
+    public WebElement getArrowBtn() {
+        return driver.findElement(By.xpath(RIGHT_BUTTON));
+    }
+
+    private static  final String WATCH_BUTTON = "//a[@href=\"https://www.youtube.com/watch?v=bhK9BK2NNs4&embeds_referring_euri=https%3A%2F%2Fwww.vans.com%2F&embeds_referring_origin=https%3A%2F%2Fwww.vans.com&feature=emb_imp_woyt\"]";
+
+    public  WebElement getWatch() {
+        return waitUntilVisibilityOfElement(WATCH_BUTTON);
     }
 }
 

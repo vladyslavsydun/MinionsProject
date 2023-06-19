@@ -48,7 +48,7 @@ public class AbstractBasePage extends AbstractBase {
         wait.until(ExpectedConditions.numberOfWindowsToBe(tabNumber));
     }
 
-    public void goToNextTab(int tabNumber) {
+    public  void goToNextTab(int tabNumber) {
         waitUntilNumberOfTabToBe(tabNumber);
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(tabNumber - 1));
