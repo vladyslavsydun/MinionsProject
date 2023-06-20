@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.devtools.v85.runtime.model.StackTraceId;
 import tests.InitialTest;
 
 import static base.CommonActions.moveCursor;
@@ -94,6 +95,42 @@ public class HomePage extends AbstractBasePage {
     }
 
 
+    // TestList
+    private static final String ITEM_STORE_LOCATION = "//a[@title='Store Locator']";
+    public  WebElement getLocation() {
+        return waitUntilElementToBeClickable(ITEM_STORE_LOCATION);
+    }
+
+
+    private static  final String INPUT_LOCATE = "//input[@id='search_address']";
+    public  WebElement getInputLocal() {
+        return waitUntilElementToBeClickable(INPUT_LOCATE);
+    }
+
+    private static final String MENU_BAR_CLICK = "//select[@name='searchradius']";
+    public  WebElement getClickMenuBar() {
+        return waitUntilElementToBeClickable(MENU_BAR_CLICK);
+    }
+
+    private  static  final String NUM_ITEM_MENU_BAR = "//select[@name='searchradius']/option[@value='100']";
+    public WebElement getNumItem() {
+        return waitUntilElementToBeClickable(NUM_ITEM_MENU_BAR);
+    }
+
+    private static final String BUTTON_SEARCH = "//input[@id='searchBtn']";
+    public WebElement getButtonSearch() {
+        return waitUntilElementToBeClickable(BUTTON_SEARCH);
+    }
+
+    private static final String TEXT_LINK = "//div[@class='h3']//a[@href='https://www.vans.com/stores/ok/tulsa/USA374']";
+    public  WebElement getTextLink() {
+        return waitUntilElementToBeClickable(TEXT_LINK);
+    }
+
+    private  static final String TITLE_LOCATION = "//h1";
+    public WebElement getTitleLocation() {
+        return waitUntilVisibilityOfElement(TITLE_LOCATION);
+    }
 }
 
 
