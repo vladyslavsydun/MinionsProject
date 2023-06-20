@@ -1,8 +1,8 @@
 package tests;
 
-import base.AbstractBase;
 import base.AbstractBaseTest;
 import base.CommonActions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.NewArrivalsPage;
@@ -22,15 +22,16 @@ public class FilteringGoodsByPrice extends AbstractBaseTest {
         newArrivalsPage.getSortRevelanceButton().click();
         newArrivalsPage.getPriceHighToLowButton().click();
 
-        CommonActions.scrollToBottonOfThePage(driver);
-        AbstractBase.sleep(300);
-
+        CommonActions.scroll(250);
         List<Double> prices = newArrivalsPage.itemsPrices().stream()
                 .map(WebElement::getText)
-                .map(str -> str.replace(" ", ""))
                 .map(str -> str.replace("$", ""))
-                .map(Double::parseDouble).sorted().toList();
+                .map(Double::parseDouble)
+                .toList();
 
-        System.out.println(prices);
+        System.out.println("List of prices: " + prices);
+        for (int i = 0; i < prices.size() - 1; i++) {
+            Assert.assertTrue(prices.get(i) >= prices.get(i + 1));
+        }
     }
 }

@@ -26,22 +26,38 @@ public class HomePage extends AbstractBasePage {
     private static final String BTN_JUST_IN = "(//a[contains(@class, 'vf-button--tertiary')])[2]";
     private static final String INSTAGRAM_LOGO_BUTTON = "//a[@class='icon icon-instagram']";
 
-
-
     public WebElement getLiveChat() {
         return waitUntilVisibilityOfElement(LIVE_CHAT);
     }
+
     public WebElement getLiveChatAnswerOne() {
         return driver.findElement(By.xpath(LIVE_CHAT_ANSWER_MESSAGE_ONE));
-    }public WebElement getLiveChatAnswerTwo() {
+    }
+
+    public WebElement getLiveChatAnswerTwo() {
         return driver.findElement(By.xpath(LIVE_CHAT_ANSWER_MESSAGE_TWO));
     }
+
     public WebElement getLiveChatSendButton() {
         return driver.findElement(By.xpath(LIVE_CHAT_SEND_BUTTON));
     }
 
-    public void clickliveChatSendButton(){
+    public void clickliveChatSendButton() {
         getLiveChatSendButton().click();
+    }
+
+    public WebElement getJustInBtn() {
+        return waitUntilElementToBeClickable(BTN_JUST_IN);
+    }
+
+    public HomePage clickBtnJustIn() {
+        moveCursor(getJustInBtn(), driver);
+        getJustInBtn().click();
+        return this;
+    }
+
+    public WebElement getInstagramLogoButton() {
+        return waitUntilElementToBeClickable(INSTAGRAM_LOGO_BUTTON);
     }
 
     public WebElement getLogo() {
@@ -51,18 +67,6 @@ public class HomePage extends AbstractBasePage {
     public WebElement getBtnLiveChat() {
         return waitUntilElementToBeClickable(BTN_LIVE_CHAT);
     }
-
-    public WebElement getJustInBtn() {
-        return waitUntilElementToBeClickable(BTN_JUST_IN); }
-
-    public HomePage clickBtnJustIn() {
-        moveCursor(getJustInBtn(), driver);
-        getJustInBtn().click();
-        return this;
-    }
-
-    public WebElement getInstagramLogoButton() {
-        return waitUntilElementToBeClickable(INSTAGRAM_LOGO_BUTTON); }
 
     public HomePage clickBtnLiveChat() {
         waitUntilVisibilityOfElement(BTN_LIVE_CHAT);
@@ -82,7 +86,28 @@ public class HomePage extends AbstractBasePage {
         homePage.getFieldInputMessage().sendKeys(message + Keys.ENTER);
         return this;
     }
+
+
+    // TestMenuBar
+    private static final String ACCESSORIES = "//a[@title=\"Accessories\"]";
+
+    public WebElement getMenu() {
+        return driver.findElement(By.xpath(ACCESSORIES));
+    }
+
+    private static final String ITEM_ALL_ACCESSORIES = "//a[@class=\"vf-link\"]";
+
+    public WebElement getMenuItem() {
+        return driver.findElement(By.xpath(ITEM_ALL_ACCESSORIES));
+    }
+
+
 }
+
+
+
+
+
 
 
 
