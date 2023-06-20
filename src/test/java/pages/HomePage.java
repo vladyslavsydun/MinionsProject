@@ -1,12 +1,10 @@
 package pages;
 
 import base.AbstractBasePage;
-import base.CommonActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import tests.InitialTest;
 
 import static base.CommonActions.moveCursor;
 
@@ -88,12 +86,75 @@ public class HomePage extends AbstractBasePage {
         return  driver.findElement(By.xpath(ACCESSORIES)) ;
     }
 
-    private static final String ITEM_ALL_ACCESSORIES= "//a[@class=\"vf-link\"]";
+    private static final String ITEM_ALL_ACCESSORIES = "//a[@class=\"vf-link\"]";
     public WebElement getMenuItem() {
         return  driver.findElement(By.xpath(ITEM_ALL_ACCESSORIES)) ;
     }
 
+    //TestHiddenDisplay
 
+    private static final String MENU_REGION = "//select[@id='country-select']";
+    public WebElement getRegion() {
+        return waitUntilElementToBeClickable(MENU_REGION);
+    }
+
+    private  static  final  String ITEM_REGION = "//select[@id='country-select']/option[@value='en-ca']";
+    public WebElement getRegionItem() {
+        return waitUntilElementToBeClickable(ITEM_REGION);
+    }
+
+    private  static  final  String TITLE_CONTACT_US = "//a[@title='Contact us']";
+    public WebElement getContactUs() {
+        return waitUntilElementToBeClickable(TITLE_CONTACT_US);
+    }
+
+    private  static  final  String INPUT_CATEGORY = "//select[@id='Category']";
+    public WebElement getCategory() {
+        return waitUntilElementToBeClickable(INPUT_CATEGORY);
+    }
+
+
+    private  static  final  String ITEM_ORDER = "//option[@value='order']";
+    public WebElement getItemOrder() {
+        return waitUntilElementToBeClickable(ITEM_ORDER);
+    }
+
+    private  static  final  String INPUT_SUBJECT = "//select[@id='Subject']";
+    public WebElement getSubject() {
+        return waitUntilElementToBeClickable(INPUT_SUBJECT);
+    }
+
+    private  static  final  String ITEM_CANCEL_ORDER = " //option[@value='Cancel Order']";
+    public WebElement getItemCancelOrder() {
+        return waitUntilElementToBeClickable(ITEM_CANCEL_ORDER);
+    }
+
+    private  static  final  String INPUT_FIRST_AND_LAST_NAME = "//input[@name='firstandlastname']";
+    public int getInputFirstLastNameSize() {
+        return driver.findElements(By.xpath(INPUT_FIRST_AND_LAST_NAME)).size();
+    }
+
+
+    private  static  final  String INPUT_EMAIL_ADDRESS = "//input[@name='emailaddress']";
+    public int getInputAddressSize() {
+        return driver.findElements(By.xpath(INPUT_EMAIL_ADDRESS)).size();
+    }
+
+    private  static  final  String INPUT_PHONE = "//input[@name='phone(555-555-5555)']";
+    public int getInputPhoneSize() {
+        return driver.findElements(By.xpath(INPUT_PHONE)).size();
+    }
+
+
+    private  static  final  String INPUT_ORDER_NUMBER = "//input[@name='ordernumber']";
+    public int getInputOrderNumberSize() {
+        return driver.findElements(By.xpath(INPUT_ORDER_NUMBER)).size();
+    }
+
+    private  static final  String INPUT_MESSAGE = "//textarea[@name='Message']";
+    public int getInputMessageSize() {
+        return driver.findElements(By.xpath(INPUT_MESSAGE)).size();
+    }
 }
 
 
