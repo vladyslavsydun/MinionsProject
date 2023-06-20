@@ -11,7 +11,7 @@ import java.io.File;
 
 abstract public class AbstractBase {
     @SneakyThrows
-    protected static void sleep(double second) {
+    public static void sleep(double second) {
         Thread.sleep((long) (second * 1000L));
     }
 

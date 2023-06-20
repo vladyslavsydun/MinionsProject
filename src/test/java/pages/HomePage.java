@@ -1,12 +1,10 @@
 package pages;
 
 import base.AbstractBasePage;
-import base.CommonActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import tests.InitialTest;
 
 import static base.CommonActions.moveCursor;
 
@@ -23,6 +21,7 @@ public class HomePage extends AbstractBasePage {
     private static final String LIVE_CHAT_SEND_BUTTON = "//button[@id='tcChat_btnSend_img']";
     private static final String LIVE_CHAT_ANSWER_MESSAGE_ONE = "//span[contains(text (), 'We are sorry for the inconvenience!  Would you like to chat with a live agent?')]";
     private static final String LIVE_CHAT_ANSWER_MESSAGE_TWO = "//span[contains(text (), 'Was this helpful?')]";
+    private static final String GIFT_CARDS_BTN = "//div[contains(@class, 'vf-utility-nav__text') and contains(text(), 'Gift Cards')]";
 
 
     public WebElement getLiveChat() {
@@ -35,6 +34,14 @@ public class HomePage extends AbstractBasePage {
     }
     public WebElement getLiveChatSendButton() {
         return driver.findElement(By.xpath(LIVE_CHAT_SEND_BUTTON));
+    }
+
+    public WebElement getGiftCardsButton() {
+        return waitUntilVisibilityOfElement(GIFT_CARDS_BTN);
+    }
+
+    public void clickGiftCardsButton() {
+        getGiftCardsButton().click();
     }
 
     public void clickliveChatSendButton(){

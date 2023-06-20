@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 @Slf4j
 public class AbstractBasePage extends AbstractBase {
-    protected WebDriver driver;
+    protected static WebDriver driver;
     protected WebDriverWait wait;
     protected Actions actions;
 
@@ -53,4 +53,10 @@ public class AbstractBasePage extends AbstractBase {
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(tabNumber - 1));
     }
+    public static void moveToNextPage() {
+        ArrayList<String> switchToWindow = new ArrayList<>
+                (driver.getWindowHandles());
+        driver.switchTo().window(switchToWindow.get(1));
+    }
 }
+
