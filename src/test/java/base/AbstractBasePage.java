@@ -7,12 +7,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 import java.util.List;
 import java.util.ArrayList;
 
 @Slf4j
-public class AbstractBasePage extends AbstractBase {
+public class AbstractBasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected Actions actions;
@@ -53,4 +54,10 @@ public class AbstractBasePage extends AbstractBase {
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(tabNumber - 1));
     }
+    public void moveToNextPage() {
+        ArrayList<String> switchToWindow = new ArrayList<>
+                (driver.getWindowHandles());
+        driver.switchTo().window(switchToWindow.get(1));
+    }
 }
+
