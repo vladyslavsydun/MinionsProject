@@ -21,11 +21,9 @@ public class HomePage extends AbstractBasePage {
     private static final String LIVE_CHAT_SEND_BUTTON = "//button[@id='tcChat_btnSend_img']";
     private static final String LIVE_CHAT_ANSWER_MESSAGE_ONE = "//span[contains(text (), 'We are sorry for the inconvenience!  Would you like to chat with a live agent?')]";
     private static final String LIVE_CHAT_ANSWER_MESSAGE_TWO = "//span[contains(text (), 'Was this helpful?')]";
-
+    private static final String GIFT_CARDS_BTN = "//div[contains(@class, 'vf-utility-nav__text') and contains(text(), 'Gift Cards')]";
     private static final String BTN_JUST_IN = "(//a[contains(@class, 'vf-button--tertiary')])[2]";
     private static final String INSTAGRAM_LOGO_BUTTON = "//a[@class='icon icon-instagram']";
-    private static final String SEARCH_BAR = "//input[@id='search' and @type='search' and @name='search']";
-    private static final String SEARCH_LOGO_IN_SEARCH_BAR = "//button[@aria-label='Search all']";
 
     public WebElement getLiveChat() {
         return waitUntilVisibilityOfElement(LIVE_CHAT);
@@ -43,11 +41,16 @@ public class HomePage extends AbstractBasePage {
         return driver.findElement(By.xpath(LIVE_CHAT_SEND_BUTTON));
     }
 
-    public WebElement getSearchLogoInSearchBar() {
-        return waitUntilElementToBeClickable(SEARCH_LOGO_IN_SEARCH_BAR);
+    public WebElement getGiftCardsButton() {
+        return waitUntilVisibilityOfElement(GIFT_CARDS_BTN);
     }
 
-    public void clickliveChatSendButton() {
+    public HomePage clickGiftCardsButton() {
+        getGiftCardsButton().click();
+        return this;
+    }
+
+    public void clickliveChatSendButton(){
         getLiveChatSendButton().click();
     }
 
@@ -59,13 +62,6 @@ public class HomePage extends AbstractBasePage {
         moveCursor(getJustInBtn(), driver);
         getJustInBtn().click();
         return this;
-    }
-
-    public WebElement getSearchBar() {
-        return waitUntilElementToBeClickable(SEARCH_BAR);
-    }
-    public void setText(){
-        getSearchBar().sendKeys("KNU SKOOL");
     }
 
     public WebElement getInstagramLogoButton() {
@@ -99,21 +95,17 @@ public class HomePage extends AbstractBasePage {
         return this;
     }
 
-
     // TestMenuBar
     private static final String ACCESSORIES = "//a[@title=\"Accessories\"]";
+    private static final String ITEM_ALL_ACCESSORIES = "//a[@class=\"vf-link\"]";
 
     public WebElement getMenu() {
         return driver.findElement(By.xpath(ACCESSORIES));
     }
 
-    private static final String ITEM_ALL_ACCESSORIES = "//a[@class=\"vf-link\"]";
-
     public WebElement getMenuItem() {
         return driver.findElement(By.xpath(ITEM_ALL_ACCESSORIES));
     }
-
-
 }
 
 
