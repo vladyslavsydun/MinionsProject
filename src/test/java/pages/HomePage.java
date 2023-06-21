@@ -25,12 +25,29 @@ public class HomePage extends AbstractBasePage {
     private static final String SHOES_BTN_WOMEN_SLIPON = "//a[contains(@href, '/en-us/categories/classic-slip-ons-c5315?f=Gender,W')]";
     private static final String BTN_FAVORITES = "//div[contains(text (), 'Favorites')]";
     private static final String BTN_FAVORITES_AFTER_ADDING_GOODS = "//div[contains(text (), 'Favorites')]/span[contains(text (), '(1)')]";
+    private static final String BTN_NEW_ARRIVALS_MENS = "//a[contains(@href , '/en-us/mens/shoes/n')]";
+    private static final String BTN_SHOES_KIDS_5_10_YEARS = "//a[contains(@href, '/en-us/kids/shoes/k')]";
+
+    public HomePage clickOnKidsShoes5To10YearsBtn() {
+        moveCursor(getBtnShoes(), driver);
+        getBtnShoesKids5_10_Years().click();
+        return this;
+    }
+
+    public WebElement getBtnShoesKids5_10_Years() {
+        return waitUntilVisibilityOfElement(BTN_SHOES_KIDS_5_10_YEARS);
+    }
+
+    public WebElement getBtnNewArrivalsMens() {
+        return waitUntilVisibilityOfElement(BTN_NEW_ARRIVALS_MENS);
+    }
 
     public WebElement getBtnFavoritesAfterAdding() {
-        return driver.findElement(By.xpath(BTN_FAVORITES_AFTER_ADDING_GOODS));
+        return waitUntilVisibilityOfElement(BTN_FAVORITES_AFTER_ADDING_GOODS);
     }
+
     public WebElement getBtnFavorites() {
-        return driver.findElement(By.xpath(BTN_FAVORITES));
+        return waitUntilVisibilityOfElement(BTN_FAVORITES);
     }
 
     public WebElement getShoesWomanSlipOn() {
@@ -42,19 +59,19 @@ public class HomePage extends AbstractBasePage {
     }
 
     public WebElement getBtnShoes() {
-        return driver.findElement(By.xpath(BTN_SHOES));
+        return waitUntilVisibilityOfElement(BTN_SHOES);
     }
 
     public WebElement getLiveChatAnswerOne() {
-        return driver.findElement(By.xpath(LIVE_CHAT_ANSWER_MESSAGE_ONE));
+        return waitUntilVisibilityOfElement(LIVE_CHAT_ANSWER_MESSAGE_ONE);
     }
 
     public WebElement getLiveChatAnswerTwo() {
-        return driver.findElement(By.xpath(LIVE_CHAT_ANSWER_MESSAGE_TWO));
+        return waitUntilVisibilityOfElement(LIVE_CHAT_ANSWER_MESSAGE_TWO);
     }
 
     public WebElement getLiveChatSendButton() {
-        return driver.findElement(By.xpath(LIVE_CHAT_SEND_BUTTON));
+        return waitUntilVisibilityOfElement(LIVE_CHAT_SEND_BUTTON);
     }
 
     public void clickliveChatSendButton() {
@@ -62,7 +79,7 @@ public class HomePage extends AbstractBasePage {
     }
 
     public WebElement getLogo() {
-        return driver.findElement(By.xpath(BTN_LOGO));
+        return waitUntilVisibilityOfElement(BTN_LOGO);
     }
 
     public WebElement getBtnLiveChat() {

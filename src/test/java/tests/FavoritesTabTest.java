@@ -18,7 +18,7 @@ public class FavoritesTabTest extends AbstractBaseTest {
                 .goShoesWomanSlipOn();
         salePage
                 .btnAddtoFavoritesClick();
-        Thread.sleep(8000);
+
         assertTrue(homePage.getBtnFavoritesAfterAdding().isDisplayed());
     }
 }
