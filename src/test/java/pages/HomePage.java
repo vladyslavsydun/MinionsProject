@@ -29,21 +29,26 @@ public class HomePage extends AbstractBasePage {
     public WebElement getLiveChat() {
         return waitUntilVisibilityOfElement(LIVE_CHAT);
     }
+
     public WebElement getLiveChatAnswerOne() {
         return driver.findElement(By.xpath(LIVE_CHAT_ANSWER_MESSAGE_ONE));
-    }public WebElement getLiveChatAnswerTwo() {
+    }
+
+    public WebElement getLiveChatAnswerTwo() {
         return driver.findElement(By.xpath(LIVE_CHAT_ANSWER_MESSAGE_TWO));
     }
+
     public WebElement getLiveChatSendButton() {
         return driver.findElement(By.xpath(LIVE_CHAT_SEND_BUTTON));
     }
 
-    public void clickliveChatSendButton(){
+    public void clickliveChatSendButton() {
         getLiveChatSendButton().click();
     }
 
     public WebElement getJustInBtn() {
-        return waitUntilElementToBeClickable(BTN_JUST_IN); }
+        return waitUntilElementToBeClickable(BTN_JUST_IN);
+    }
 
     public HomePage clickBtnJustIn() {
         moveCursor(getJustInBtn(), driver);
@@ -52,7 +57,8 @@ public class HomePage extends AbstractBasePage {
     }
 
     public WebElement getInstagramLogoButton() {
-        return waitUntilElementToBeClickable(INSTAGRAM_LOGO_BUTTON); }
+        return waitUntilElementToBeClickable(INSTAGRAM_LOGO_BUTTON);
+    }
 
     public WebElement getLogo() {
         return driver.findElement(By.xpath(BTN_LOGO));
@@ -83,14 +89,16 @@ public class HomePage extends AbstractBasePage {
 
 
     // TestMenuBar
-    private  static  final  String ACCESSORIES = "//a[@title=\"Accessories\"]";
-    public  WebElement getMenu() {
-        return  driver.findElement(By.xpath(ACCESSORIES)) ;
+    private static final String ACCESSORIES = "//a[@title=\"Accessories\"]";
+
+    public WebElement getMenu() {
+        return driver.findElement(By.xpath(ACCESSORIES));
     }
 
-    private static final String ITEM_ALL_ACCESSORIES= "//a[@class=\"vf-link\"]";
+    private static final String ITEM_ALL_ACCESSORIES = "//a[@class=\"vf-link\"]";
+
     public WebElement getMenuItem() {
-        return  driver.findElement(By.xpath(ITEM_ALL_ACCESSORIES)) ;
+        return driver.findElement(By.xpath(ITEM_ALL_ACCESSORIES));
     }
 
 
