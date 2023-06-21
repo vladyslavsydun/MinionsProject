@@ -27,7 +27,7 @@ public class AbstractBasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
     }
 
-    protected WebElement waitUntilElementToBeClickable(String locator) {
+    public WebElement waitUntilElementToBeClickable(String locator) {
         return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
     }
 

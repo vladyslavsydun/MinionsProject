@@ -24,6 +24,7 @@ public class HomePage extends AbstractBasePage {
     private static final String GIFT_CARDS_BTN = "//div[contains(@class, 'vf-utility-nav__text') and contains(text(), 'Gift Cards')]";
     private static final String BTN_JUST_IN = "(//a[contains(@class, 'vf-button--tertiary')])[2]";
     private static final String INSTAGRAM_LOGO_BUTTON = "//a[@class='icon icon-instagram']";
+    private static final String CONTACT_US_BUTTON = "//a[@title='Contact us' and @href='/en-us/support/contact-us']";
 
     public WebElement getLiveChat() {
         return waitUntilVisibilityOfElement(LIVE_CHAT);
@@ -43,6 +44,10 @@ public class HomePage extends AbstractBasePage {
 
     public WebElement getGiftCardsButton() {
         return waitUntilVisibilityOfElement(GIFT_CARDS_BTN);
+    }
+
+    public WebElement getContactUsButton() {
+        return  waitUntilElementToBeClickable(CONTACT_US_BUTTON);
     }
 
     public HomePage clickGiftCardsButton() {
