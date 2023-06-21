@@ -40,8 +40,9 @@ public class HomePage extends AbstractBasePage {
         return waitUntilVisibilityOfElement(GIFT_CARDS_BTN);
     }
 
-    public void clickGiftCardsButton() {
+    public HomePage clickGiftCardsButton() {
         getGiftCardsButton().click();
+        return this;
     }
 
     public void clickliveChatSendButton(){

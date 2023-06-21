@@ -9,17 +9,17 @@ import pages.VansGiftCardsPage;
 public class CheckButtonBuyNowInGiftCardsSection extends AbstractBaseTest {
 
     @Test
-    public void checkButtonBuyNowInGiftCardsSection() throws InterruptedException {
-
+    public void checkButtonBuyNowInGiftCardsSection() {
         HomePage homePage = new HomePage(driver);
+        VansGiftCardsPage vansGiftCardsPage = new VansGiftCardsPage(driver);
 
-        homePage.clickGiftCardsButton();
+        homePage
+                .clickGiftCardsButton();
 
         Assert.assertTrue(homePage.getGiftCardsButton().isDisplayed());
 
-        VansGiftCardsPage vansGiftCardsPage = new VansGiftCardsPage(driver);
-
-        vansGiftCardsPage.clickBuyNowButton();
+        vansGiftCardsPage
+                .clickBuyNowButton();
 
         Assert.assertTrue(driver.getCurrentUrl().contains("cashstar"));
     }
