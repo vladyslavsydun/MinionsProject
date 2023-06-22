@@ -95,6 +95,14 @@ public class HomePage extends AbstractBasePage {
         return this;
     }
 
+    // TestButtonTwitter
+
+    private static final String BTN_TWIT = "//a[@class=\"icon icon-twitter\"]";
+    public WebElement getBtn() {
+        return driver.findElement(By.xpath(BTN_TWIT));
+    }
+
+
     // TestMenuBar
     private static final String ACCESSORIES = "//a[@title=\"Accessories\"]";
     private static final String ITEM_ALL_ACCESSORIES = "//a[@class=\"vf-link\"]";
@@ -107,11 +115,3 @@ public class HomePage extends AbstractBasePage {
         return driver.findElement(By.xpath(ITEM_ALL_ACCESSORIES));
     }
 }
-
-
-
-
-
-
-
-
