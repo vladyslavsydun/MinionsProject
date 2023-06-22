@@ -7,7 +7,6 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
-import static base.AbstractBase.sleep;
 
 
 public class TestVideoYT extends AbstractBaseTest {

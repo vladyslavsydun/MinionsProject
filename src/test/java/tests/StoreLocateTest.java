@@ -6,14 +6,12 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
-import static base.AbstractBase.sleep;
 
 public class StoreLocateTest extends AbstractBaseTest {
     @Test
     private void locationVerificationTest() {
 
         HomePage homePage = new HomePage(driver);
-        CommonActions commonActions = new CommonActions();
 
         CommonActions.scrollToElement(homePage.getLocation(), driver);
         homePage.getLocation().click();
