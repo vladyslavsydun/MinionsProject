@@ -232,6 +232,11 @@ public class HomePage extends AbstractBasePage {
         return waitUntilElementToBeClickable(TEXT_LINK);
     }
 
+    private  static final String TITLE_LOCATION = "//h1";
+    public WebElement getTitleLocation() {
+        return waitUntilVisibilityOfElement(TITLE_LOCATION);
+    }
+
     // TestButtonTwitter
 
     private static final String BTN_TWIT = "//a[@class=\"icon icon-twitter\"]";
