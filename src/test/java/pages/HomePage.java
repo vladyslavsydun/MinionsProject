@@ -232,4 +232,12 @@ public class HomePage extends AbstractBasePage {
         return waitUntilElementToBeClickable(TEXT_LINK);
     }
 
+    // TestButtonTwitter
+
+    private static final String BTN_TWIT = "//a[@class=\"icon icon-twitter\"]";
+    public WebElement getBtn() {
+        return driver.findElement(By.xpath(BTN_TWIT));
+    }
+
+
 }
