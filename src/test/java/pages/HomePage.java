@@ -94,24 +94,45 @@ public class HomePage extends AbstractBasePage {
         homePage.getFieldInputMessage().sendKeys(message + Keys.ENTER);
         return this;
     }
+    //    |- - - - - - - - - - - - - - - - - AutoTestVideoYt - - - - - - - - - - - - - - - - -|
 
+    private static final String ITEM_BMX = "//a[@title=\"BMX\"]" ;
+    public WebElement getBmx() {
+        return waitUntilVisibilityOfElement(ITEM_BMX);
+    }
+
+    private static final String ITEM_VIDEO = "//a[@class=\"menu__link video__link scrollnow\"]";
+
+    public WebElement getVideo() {
+        return waitUntilVisibilityOfElement(ITEM_VIDEO);
+    }
+
+    private static final String RIGHT_BUTTON = "//button[@aria-label=\"Go to next slide\"]";
+
+    public WebElement getArrowBtn() {
+        return driver.findElement(By.xpath(RIGHT_BUTTON));
+    }
+
+    private static  final String WATCH_BUTTON = "//a[@href=\"https://www.youtube.com/watch?v=bhK9BK2NNs4&embeds_referring_euri=https%3A%2F%2Fwww.vans.com%2F&embeds_referring_origin=https%3A%2F%2Fwww.vans.com&feature=emb_imp_woyt\"]";
+
+    public  WebElement getWatch() {
+        return waitUntilVisibilityOfElement(WATCH_BUTTON);
+    }
+  
+    // TestMenuBar
+    private  static  final  String ACCESSORIES = "//a[@title=\"Accessories\"]";
+    public  WebElement getMenu() {
+        return  driver.findElement(By.xpath(ACCESSORIES)) ;
+    }
+
+    private static final String ITEM_ALL_ACCESSORIES= "//a[@class=\"vf-link\"]";
+    public WebElement getMenuItem() {
+        return  driver.findElement(By.xpath(ITEM_ALL_ACCESSORIES)) ;
+      
     // TestButtonTwitter
 
     private static final String BTN_TWIT = "//a[@class=\"icon icon-twitter\"]";
     public WebElement getBtn() {
         return driver.findElement(By.xpath(BTN_TWIT));
-    }
-
-
-    // TestMenuBar
-    private static final String ACCESSORIES = "//a[@title=\"Accessories\"]";
-    private static final String ITEM_ALL_ACCESSORIES = "//a[@class=\"vf-link\"]";
-
-    public WebElement getMenu() {
-        return driver.findElement(By.xpath(ACCESSORIES));
-    }
-
-    public WebElement getMenuItem() {
-        return driver.findElement(By.xpath(ITEM_ALL_ACCESSORIES));
     }
 }
