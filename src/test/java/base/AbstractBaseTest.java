@@ -1,6 +1,7 @@
 package base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -26,6 +27,11 @@ abstract public class AbstractBaseTest {
     public void closeBrowser() {
         log.info("<<<=== Teardown");
         driver.quit();
+    }
+
+    @SneakyThrows
+    public void sleep(long seconds) {
+        Thread.sleep(seconds * 1000L);
     }
 
     public void openUrl(String url) {
