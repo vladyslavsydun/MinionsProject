@@ -36,6 +36,4 @@ public class HomePagePl extends AbstractBasePage {
     private WebElement getEntrollBtn() {
         return waitUntilElementToBeClickable(ENROLL_BTN);
     }
-
-
 }
