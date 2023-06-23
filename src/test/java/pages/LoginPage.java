@@ -24,7 +24,7 @@ public class LoginPage extends AbstractBasePage {
     private static final String DATE_OF_BIRTH = "//input[@id='dateofbirth(mm/dd/yyyy)']";
 
     private static final String CELL_PHONE = "//input[@id='nationalnumber']";
-    private static final String PRIVACY_POLICY_CHECH_BOX_BTN = "(//div[@role='checkbox'])[2]";
+    private static final String PRIVACY_POLICY_CHECH_BOX_BTN = "(//div[@role='checkbox'])[3]";
 
     private static final String JOIN_NOW = "//button[@data-testid='create-account__submit__button']";
 
