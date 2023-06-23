@@ -7,12 +7,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 import java.util.List;
 import java.util.ArrayList;
 
 @Slf4j
-public class AbstractBasePage extends AbstractBase {
+public class AbstractBasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected Actions actions;
@@ -26,7 +27,7 @@ public class AbstractBasePage extends AbstractBase {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
     }
 
-    protected WebElement waitUntilElementToBeClickable(String locator) {
+    public WebElement waitUntilElementToBeClickable(String locator) {
         return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
     }
 
@@ -48,9 +49,15 @@ public class AbstractBasePage extends AbstractBase {
         wait.until(ExpectedConditions.numberOfWindowsToBe(tabNumber));
     }
 
-    public void goToNextTab(int tabNumber) {
+    public  void goToNextTab(int tabNumber) {
         waitUntilNumberOfTabToBe(tabNumber);
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(tabNumber - 1));
     }
+    public void moveToNextPage() {
+        ArrayList<String> switchToWindow = new ArrayList<>
+                (driver.getWindowHandles());
+        driver.switchTo().window(switchToWindow.get(1));
+    }
 }
+
