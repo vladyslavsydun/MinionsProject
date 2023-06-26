@@ -16,9 +16,9 @@ public class CheckButtonDetailsByKnuSkoolShoeProduct extends AbstractBaseTest {
         KnuSkoolShoeProductPage knuSkoolShoeProductPage = new KnuSkoolShoeProductPage(driver);
         KnuSkoolPage knuSkoolPage = new KnuSkoolPage(driver);
 
-        homePage.getSearchBar();
-        homePage.setText();
-        homePage.getSearchLogoInSearchBar().click();
+//        homePage.getSearchBar();
+//        homePage.setText();
+//        homePage.getSearchLogoInSearchBar().click();
         knuSkoolPage.firstElementOnPage();
         CommonActions.jsClick(knuSkoolShoeProductPage.getDetailsButton(), driver);
 
