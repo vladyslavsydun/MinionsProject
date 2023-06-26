@@ -5,7 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+<<<<<<< HEAD
+=======
 
+>>>>>>> main
 
 import static base.CommonActions.moveCursor;
 
@@ -102,6 +105,16 @@ public class HomePage extends AbstractBasePage {
     }
     //    |- - - - - - - - - - - - - - - - - AutoTestVideoYt - - - - - - - - - - - - - - - - -|
 
+<<<<<<< HEAD
+    // TestMenuBar
+    private static final String ACCESSORIES = "//a[@title='Accessories']";
+    private static final String ITEM_ALL_ACCESSORIES = "//a[@class='vf-link']";
+
+    public WebElement getMenu() {
+        return driver.findElement(By.xpath(ACCESSORIES));
+    }
+
+=======
     private static final String ITEM_BMX = "//a[@title=\"BMX\"]" ;
     public WebElement getBmx() {
         return waitUntilVisibilityOfElement(ITEM_BMX);
@@ -132,6 +145,7 @@ public class HomePage extends AbstractBasePage {
     }
 
     private static final String ITEM_ALL_ACCESSORIES = "//a[@class=\"vf-link\"]";
+>>>>>>> main
     public WebElement getMenuItem() {
         return  driver.findElement(By.xpath(ITEM_ALL_ACCESSORIES)) ;
     }
@@ -243,6 +257,4 @@ public class HomePage extends AbstractBasePage {
     public WebElement getBtn() {
         return driver.findElement(By.xpath(BTN_TWIT));
     }
-
-
 }
