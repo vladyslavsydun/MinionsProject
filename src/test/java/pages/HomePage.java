@@ -99,10 +99,18 @@ public class HomePage extends AbstractBasePage {
         homePage.getFieldInputMessage().sendKeys(message + Keys.ENTER);
         return this;
     }
-    //    |- - - - - - - - - - - - - - - - - AutoTestVideoYt - - - - - - - - - - - - - - - - -|
-
+   
     private static final String ACCESSORIES = "//a[@title='Accessories']";
     private static final String ITEM_ALL_ACCESSORIES = "//a[@class='vf-link']";
+
+    // TestMenuBar
+    private static final String ACCESSORIES = "//a[@title='Accessories']";
+    private static final String ITEM_ALL_ACCESSORIES = "//a[@class='vf-link']";
+
+    public WebElement getMenu() {
+        return driver.findElement(By.xpath(ACCESSORIES));
+    }
+
     private static final String ITEM_BMX = "//a[@title=\"BMX\"]" ;
     public WebElement getBmx() {
         return waitUntilVisibilityOfElement(ITEM_BMX);
@@ -133,7 +141,7 @@ public class HomePage extends AbstractBasePage {
     }
 
     private static final String ITEM_ALL_ACCESSORIES = "//a[@class=\"vf-link\"]";
-  
+
     public WebElement getMenuItem() {
         return  driver.findElement(By.xpath(ITEM_ALL_ACCESSORIES)) ;
     }
