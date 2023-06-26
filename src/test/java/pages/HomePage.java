@@ -121,6 +121,7 @@ public class HomePage extends AbstractBasePage {
     }
 
     public HomePage clickBtnLiveChat() {
+        waitUntilVisibilityOfElement(BTN_LIVE_CHAT);
         moveCursor(getBtnLiveChat(), driver);
         getBtnLiveChat().click();
         return this;
@@ -144,6 +145,17 @@ public class HomePage extends AbstractBasePage {
     //    |- - - - - - - - - - - - - - - - - AutoTestVideoYt - - - - - - - - - - - - - - - - -|
 
     private static final String ITEM_BMX = "//a[@title='BMX']" ;
+<<<<<<< HEAD
+    // TestMenuBar
+    private static final String ACCESSORIES = "//a[@title='Accessories']";
+    private static final String ITEM_ALL_ACCESSORIES = "//a[@class='vf-link']";
+
+    public WebElement getMenu() {
+        return driver.findElement(By.xpath(ACCESSORIES));
+    }
+
+=======
+    private static final String ITEM_BMX = "//a[@title=\"BMX\"]" ;
     public WebElement getBmx() {
         return waitUntilVisibilityOfElement(ITEM_BMX);
     }
