@@ -9,7 +9,7 @@ import static org.testng.Assert.assertTrue;
 public class LiveChatTest extends AbstractBaseTest {
 
     @Test
-    public void messagingLiveChat() throws InterruptedException {
+    public void messagingLiveChat() {
         HomePage homePage = new HomePage(driver);
 
         homePage.clickBtnLiveChat();

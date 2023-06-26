@@ -20,9 +20,8 @@ public class ShoesParametersTest extends AbstractBaseTest {
         kidsShoesPage
                 .clickParamKidsShoeSize10_5()
                 .clickParamColorBlack()
-                .clickBtnPattern()
                 .clickBtnContainerPatternAnimalPrint();
-
+        sleep(4);
         assertTrue(kidsShoesPage.getParameterChosenColor().isDisplayed());
         assertTrue(kidsShoesPage.getParameterChosen10_5().isDisplayed());
     }
