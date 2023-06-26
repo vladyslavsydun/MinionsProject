@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 
 import java.util.Random;
 
+import static java.lang.Thread.sleep;
+
 public class LoginPage extends AbstractBasePage {
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -92,7 +94,7 @@ public class LoginPage extends AbstractBasePage {
         return waitUntilVisibilityOfElement(CELL_PHONE);
     }
 
-    public LoginPage fillingCellPhoneField() {
+    public LoginPage fillingCellPhoneField() throws InterruptedException {
         Random random = new Random();
         int randomNumber = random.nextInt((int) Math.pow(10, 7));
         String number = String.valueOf(randomNumber);
@@ -114,8 +116,8 @@ public class LoginPage extends AbstractBasePage {
         return waitUntilVisibilityOfElement(JOIN_NOW);
     }
 
-    public LoginPage clickJoinNow() {
-        sleep(0.3);
+    public LoginPage clickJoinNow() throws InterruptedException {
+        sleep((long) 0.3);
         getJoinNowField().click();
         return this;
     }

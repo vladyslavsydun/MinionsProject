@@ -5,10 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-<<<<<<< HEAD
-=======
 
->>>>>>> main
 
 import static base.CommonActions.moveCursor;
 
@@ -29,21 +26,59 @@ public class HomePage extends AbstractBasePage {
     private static final String BTN_JUST_IN = "(//a[contains(@class, 'vf-button--tertiary')])[2]";
     private static final String INSTAGRAM_LOGO_BUTTON = "//a[@class='icon icon-instagram']";
     private static final String CONTACT_US_BUTTON = "//a[@title='Contact us' and @href='/en-us/support/contact-us']";
+    private static final String BTN_SHOES = "//a[@data-navigation='00081']";
+    private static final String SHOES_BTN_WOMEN_SLIPON = "//a[contains(@href, '/en-us/categories/classic-slip-ons-c5315?f=Gender,W')]";
+    private static final String BTN_FAVORITES = "//div[contains(text (), 'Favorites')]";
+    private static final String BTN_FAVORITES_AFTER_ADDING_GOODS = "//div[contains(text (), 'Favorites')]/span[contains(text (), '(1)')]";
+    private static final String BTN_NEW_ARRIVALS_MENS = "//a[contains(@href , '/en-us/mens/shoes/n')]";
+    private static final String BTN_SHOES_KIDS_5_10_YEARS = "//a[contains(@href, '/en-us/kids/shoes/k')]";
+
+    public HomePage clickOnKidsShoes5To10YearsBtn() {
+        moveCursor(getBtnShoes(), driver);
+        getBtnShoesKids5_10_Years().click();
+        return this;
+    }
+
+    public WebElement getBtnShoesKids5_10_Years() {
+        return waitUntilVisibilityOfElement(BTN_SHOES_KIDS_5_10_YEARS);
+    }
+
+    public WebElement getBtnNewArrivalsMens() {
+        return waitUntilVisibilityOfElement(BTN_NEW_ARRIVALS_MENS);
+    }
+
+    public WebElement getBtnFavoritesAfterAdding() {
+        return waitUntilVisibilityOfElement(BTN_FAVORITES_AFTER_ADDING_GOODS);
+    }
+
+    public WebElement getBtnFavorites() {
+        return waitUntilVisibilityOfElement(BTN_FAVORITES);
+    }
+
+    public WebElement getShoesWomanSlipOn() {
+        return waitUntilElementToBeClickable(SHOES_BTN_WOMEN_SLIPON);
+    }
 
     public WebElement getLiveChat() {
         return waitUntilVisibilityOfElement(LIVE_CHAT);
     }
 
+    public WebElement getBtnShoes() {
+        return waitUntilVisibilityOfElement(BTN_SHOES);
+    }
+
+
     public WebElement getLiveChatAnswerOne() {
-        return driver.findElement(By.xpath(LIVE_CHAT_ANSWER_MESSAGE_ONE));
+        return waitUntilVisibilityOfElement(LIVE_CHAT_ANSWER_MESSAGE_ONE);
     }
 
     public WebElement getLiveChatAnswerTwo() {
-        return driver.findElement(By.xpath(LIVE_CHAT_ANSWER_MESSAGE_TWO));
+        return waitUntilVisibilityOfElement(LIVE_CHAT_ANSWER_MESSAGE_TWO);
     }
 
+
     public WebElement getLiveChatSendButton() {
-        return driver.findElement(By.xpath(LIVE_CHAT_SEND_BUTTON));
+        return waitUntilVisibilityOfElement(LIVE_CHAT_SEND_BUTTON);
     }
 
     public WebElement getGiftCardsButton() {
@@ -59,7 +94,7 @@ public class HomePage extends AbstractBasePage {
         return this;
     }
 
-    public void clickliveChatSendButton(){
+    public void clickliveChatSendButton() {
         getLiveChatSendButton().click();
     }
 
@@ -78,7 +113,7 @@ public class HomePage extends AbstractBasePage {
     }
 
     public WebElement getLogo() {
-        return driver.findElement(By.xpath(BTN_LOGO));
+        return waitUntilVisibilityOfElement(BTN_LOGO);
     }
 
     public WebElement getBtnLiveChat() {
@@ -97,15 +132,19 @@ public class HomePage extends AbstractBasePage {
     }
 
     public HomePage liveChatInsertMessage(String message) {
-        HomePage homePage = new HomePage(driver);
-        homePage.
-                clickBtnLiveChat();
-        homePage.getFieldInputMessage().sendKeys(message + Keys.ENTER);
+        clickBtnLiveChat()
+                .getFieldInputMessage().sendKeys(message + Keys.ENTER);
+        return this;
+    }
+
+    public HomePage goShoesWomanSlipOn() {
+        moveCursor(getBtnShoes(), driver);
+        getShoesWomanSlipOn().click();
         return this;
     }
     //    |- - - - - - - - - - - - - - - - - AutoTestVideoYt - - - - - - - - - - - - - - - - -|
 
-<<<<<<< HEAD
+    private static final String ITEM_BMX = "//a[@title='BMX']" ;
     // TestMenuBar
     private static final String ACCESSORIES = "//a[@title='Accessories']";
     private static final String ITEM_ALL_ACCESSORIES = "//a[@class='vf-link']";
@@ -114,40 +153,32 @@ public class HomePage extends AbstractBasePage {
         return driver.findElement(By.xpath(ACCESSORIES));
     }
 
-=======
-    private static final String ITEM_BMX = "//a[@title=\"BMX\"]" ;
     public WebElement getBmx() {
         return waitUntilVisibilityOfElement(ITEM_BMX);
     }
 
-    private static final String ITEM_VIDEO = "//a[@class=\"menu__link video__link scrollnow\"]";
+    private static final String ITEM_VIDEO = "//a[@class='menu__link video__link scrollnow']";
 
     public WebElement getVideo() {
         return waitUntilVisibilityOfElement(ITEM_VIDEO);
     }
 
-    private static final String RIGHT_BUTTON = "//button[@aria-label=\"Go to next slide\"]";
+    private static final String RIGHT_BUTTON = "//button[@aria-label='Go to next slide']";
 
     public WebElement getArrowBtn() {
         return driver.findElement(By.xpath(RIGHT_BUTTON));
     }
 
-    private static  final String WATCH_BUTTON = "//a[@href=\"https://www.youtube.com/watch?v=bhK9BK2NNs4&embeds_referring_euri=https%3A%2F%2Fwww.vans.com%2F&embeds_referring_origin=https%3A%2F%2Fwww.vans.com&feature=emb_imp_woyt\"]";
+    private static  final String WATCH_BUTTON = "//a[@href='https://www.youtube.com/watch?v=bhK9BK2NNs4&embeds_referring_euri=https%3A%2F%2Fwww.vans.com%2F&embeds_referring_origin=https%3A%2F%2Fwww.vans.com&feature=emb_imp_woyt']";
 
     public  WebElement getWatch() {
         return waitUntilVisibilityOfElement(WATCH_BUTTON);
     }
-  
-    // TestMenuBar
-    private  static  final  String ACCESSORIES = "//a[@title=\"Accessories\"]";
-    public  WebElement getMenu() {
-        return  driver.findElement(By.xpath(ACCESSORIES)) ;
-    }
 
-    private static final String ITEM_ALL_ACCESSORIES = "//a[@class=\"vf-link\"]";
->>>>>>> main
+    // TestMenuBar
+
     public WebElement getMenuItem() {
-        return  driver.findElement(By.xpath(ITEM_ALL_ACCESSORIES)) ;
+        return  waitUntilVisibilityOfElement(ITEM_ALL_ACCESSORIES);
     }
 
     //TestHiddenDisplay
@@ -257,4 +288,6 @@ public class HomePage extends AbstractBasePage {
     public WebElement getBtn() {
         return driver.findElement(By.xpath(BTN_TWIT));
     }
+
+
 }

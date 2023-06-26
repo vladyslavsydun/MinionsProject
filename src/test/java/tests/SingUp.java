@@ -7,7 +7,7 @@ import pages.LoginPage;
 
 public class SingUp extends InitialTest {
     @Test
-    public void checkSingUp() {
+    public void checkSingUp() throws InterruptedException {
         HomePagePl hpPL = new HomePagePl(driver);
         LoginPage lp = new LoginPage(driver);
 
